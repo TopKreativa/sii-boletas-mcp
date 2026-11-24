@@ -1,0 +1,57 @@
+{
+  "name": "sii-boletas-mcp",
+  "version": "0.1.0",
+  "description": "Emite boletas electrónicas del SII de Chile conversando con Claude. Conector MCP gratuito y de código abierto: sin certificado digital ni folios.",
+  "type": "module",
+  "bin": {
+    "sii-boletas-mcp": "dist/index.js"
+  },
+  "main": "dist/sii.js",
+  "types": "dist/sii.d.ts",
+  "exports": {
+    ".": "./dist/sii.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build",
+    "prepare": "tsc",
+    "pack:mcpb": "bash scripts/pack-mcpb.sh"
+  },
+  "keywords": [
+    "sii",
+    "chile",
+    "boleta-electronica",
+    "factura-electronica",
+    "dte",
+    "mcp",
+    "claude",
+    "model-context-protocol",
+    "pymes"
+  ],
+  "author": "Luis Lufi (Top Kreativa) <contacto@topkreativa.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LADYSLAVANDERIA/sii-boletas-mcp.git"
+  },
+  "homepage": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp#readme",
+  "bugs": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/issues",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

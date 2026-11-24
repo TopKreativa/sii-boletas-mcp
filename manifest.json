@@ -1,0 +1,89 @@
+{
+  "manifest_version": "0.3",
+  "name": "sii-boletas",
+  "display_name": "Boletas SII Chile",
+  "version": "0.1.0",
+  "description": "Emite boletas electrónicas del SII conversando con Claude. Gratis y de código abierto.",
+  "long_description": "Conecta Claude al sistema gratuito de boletas electrónicas del SII de Chile. Pídele a Claude, en palabras normales, que emita una boleta: la revisa contra los datos reales de tu empresa, te muestra el total, y solo la emite cuando confirmas. No necesitas certificado digital ni folios: el SII firma y asigna el folio. Tu RUT y tu clave tributaria quedan guardados solo en tu computador.",
+  "author": {
+    "name": "Luis Lufi · Top Kreativa",
+    "email": "contacto@topkreativa.com",
+    "url": "https://topkreativa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp"
+  },
+  "homepage": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp",
+  "support": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "sii",
+    "chile",
+    "boleta",
+    "boleta electrónica",
+    "pymes",
+    "impuestos"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
+      "env": {
+        "SII_RUT": "${user_config.sii_rut}",
+        "SII_CLAVE": "${user_config.sii_clave}",
+        "SII_EMPRESA": "${user_config.sii_empresa}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "sii_empresas",
+      "description": "Lista las empresas para las que puedes emitir boletas."
+    },
+    {
+      "name": "sii_previsualizar_boleta",
+      "description": "Revisa una boleta contra el SII sin emitirla."
+    },
+    {
+      "name": "sii_emitir_boleta",
+      "description": "Emite una boleta real en el SII (pide confirmación)."
+    }
+  ],
+  "user_config": {
+    "sii_rut": {
+      "type": "string",
+      "title": "Tu RUT personal",
+      "description": "El RUT con el que entras al SII (ej. 12345678-9). Debe estar autorizado para emitir boletas de la empresa.",
+      "required": true
+    },
+    "sii_clave": {
+      "type": "string",
+      "title": "Tu clave tributaria",
+      "description": "La misma clave del sitio del SII. Se guarda solo en este computador.",
+      "sensitive": true,
+      "required": true
+    },
+    "sii_empresa": {
+      "type": "string",
+      "title": "RUT de la empresa (opcional)",
+      "description": "La empresa que emite por defecto (ej. 76123456-7). Si lo dejas vacío, Claude te lo pregunta.",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "icon": "icon.png"
+}
