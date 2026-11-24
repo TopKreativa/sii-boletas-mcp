@@ -5,7 +5,7 @@
 ## Empezar
 
 ```bash
-git clone https://github.com/LADYSLAVANDERIA/sii-boletas-mcp
+git clone https://github.com/TopKreativa/sii-boletas-mcp
 cd sii-boletas-mcp
 npm install
 npm test

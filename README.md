@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/releases/latest"><img src="https://img.shields.io/github/v/release/LADYSLAVANDERIA/sii-boletas-mcp?label=descargar&color=143070" alt="Descargar"></a>
+  <a href="https://github.com/TopKreativa/sii-boletas-mcp/releases/latest"><img src="https://img.shields.io/github/v/release/TopKreativa/sii-boletas-mcp?label=descargar&color=143070" alt="Descargar"></a>
   <img src="https://img.shields.io/badge/licencia-MIT-green" alt="MIT">
   <img src="https://img.shields.io/badge/hecho%20en-Chile%20🇨🇱-d62839" alt="Hecho en Chile">
   <img src="https://img.shields.io/badge/MCP-compatible-6b4fbb" alt="MCP">
@@ -45,7 +45,7 @@ Para **pymes, emprendedores y almaceneros** que ya usan el sistema gratuito de b
 
 ### Opción A · Claude Desktop (la más fácil)
 
-1. Descarga **`sii-boletas.mcpb`** desde la [última versión](https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/releases/latest).
+1. Descarga **`sii-boletas.mcpb`** desde la [última versión](https://github.com/TopKreativa/sii-boletas-mcp/releases/latest).
 2. Ábrelo con doble clic: Claude Desktop lo instala.
 3. Escribe tu **RUT**, tu **clave tributaria** y (opcional) el **RUT de tu empresa**. Listo.
 
@@ -54,7 +54,7 @@ Para **pymes, emprendedores y almaceneros** que ya usan el sistema gratuito de b
 ```bash
 claude mcp add sii-boletas \
   -e SII_RUT=12345678-9 -e SII_CLAVE='tu-clave' -e SII_EMPRESA=76123456-7 \
-  -- npx -y github:LADYSLAVANDERIA/sii-boletas-mcp
+  -- npx -y github:TopKreativa/sii-boletas-mcp
 ```
 
 ### Opción C · Cualquier cliente MCP (configuración JSON)
@@ -64,7 +64,7 @@ claude mcp add sii-boletas \
   "mcpServers": {
     "sii-boletas": {
       "command": "npx",
-      "args": ["-y", "github:LADYSLAVANDERIA/sii-boletas-mcp"],
+      "args": ["-y", "github:TopKreativa/sii-boletas-mcp"],
       "env": { "SII_RUT": "12345678-9", "SII_CLAVE": "tu-clave", "SII_EMPRESA": "76123456-7" }
     }
   }
@@ -110,7 +110,7 @@ const { folio, pdfUrl } = await sii.emitir({ /* la misma boleta */ });
 - [ ] Facturas (33/34), notas de crédito (61) y guías (52) con certificado digital
 - [ ] Descuentos por línea
 
-¿Quieres ayudar? Mira los [issues marcados como *good first issue*](https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) y la [guía para contribuir](CONTRIBUTING.md).
+¿Quieres ayudar? Mira los [issues marcados como *good first issue*](https://github.com/TopKreativa/sii-boletas-mcp/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) y la [guía para contribuir](CONTRIBUTING.md).
 
 ## Origen
 
@@ -126,4 +126,4 @@ Software entregado "tal cual", sin garantía (ver [LICENSE](LICENSE)). Cada bole
 
 ### In English
 
-**Issue Chilean SII electronic receipts (boletas) by chatting with Claude.** A free, MIT-licensed MCP server that drives the SII's free e-receipt system with the user's own tax password, so no digital certificate or CAF folios are needed. It validates against the issuer's real SII data, always previews and asks for confirmation before issuing, and keeps credentials on the user's machine. Install the `.mcpb` from Releases in Claude Desktop, or use `npx -y github:LADYSLAVANDERIA/sii-boletas-mcp` in any MCP client. Contributions welcome.
+**Issue Chilean SII electronic receipts (boletas) by chatting with Claude.** A free, MIT-licensed MCP server that drives the SII's free e-receipt system with the user's own tax password, so no digital certificate or CAF folios are needed. It validates against the issuer's real SII data, always previews and asks for confirmation before issuing, and keeps credentials on the user's machine. Install the `.mcpb` from Releases in Claude Desktop, or use `npx -y github:TopKreativa/sii-boletas-mcp` in any MCP client. Contributions welcome.

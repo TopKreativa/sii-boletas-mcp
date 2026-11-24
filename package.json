@@ -38,10 +38,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LADYSLAVANDERIA/sii-boletas-mcp.git"
+    "url": "git+https://github.com/TopKreativa/sii-boletas-mcp.git"
   },
-  "homepage": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp#readme",
-  "bugs": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/issues",
+  "homepage": "https://github.com/TopKreativa/sii-boletas-mcp#readme",
+  "bugs": "https://github.com/TopKreativa/sii-boletas-mcp/issues",
   "engines": {
     "node": ">=20"
   },

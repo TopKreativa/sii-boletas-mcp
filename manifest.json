@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp"
+    "url": "https://github.com/TopKreativa/sii-boletas-mcp"
   },
-  "homepage": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp",
-  "support": "https://github.com/LADYSLAVANDERIA/sii-boletas-mcp/issues",
+  "homepage": "https://github.com/TopKreativa/sii-boletas-mcp",
+  "support": "https://github.com/TopKreativa/sii-boletas-mcp/issues",
   "license": "MIT",
   "keywords": [
     "sii",
