@@ -18,9 +18,9 @@
 
 ---
 
-> **Tú:** Emite una boleta por 2 lavados de $4.500, pagados con transferencia.
+> **Tú:** Emite una boleta por 3 cafés de $3.000, pagados con transferencia.
 >
-> **Claude:** Revisé con el SII: boleta afecta, 2 × Lavado a $4.500, total **$9.000**, transferencia, sucursal casa matriz. ¿La emito?
+> **Claude:** Revisé con el SII: boleta afecta, 3 × Café a $3.000, total **$9.000**, transferencia. ¿La emito?
 >
 > **Tú:** Sí.
 >
@@ -82,7 +82,7 @@ const sii = new ClienteBoletas(process.env.SII_RUT, process.env.SII_CLAVE);
 
 const revision = await sii.previsualizar({
   tipo: 39, rutEmpresa: "76123456-7", medioPago: "PE",
-  lineas: [{ nombre: "Lavado", cantidad: 2, precio: 4500 }], total: 9000,
+  lineas: [{ nombre: "Café", cantidad: 3, precio: 3000 }], total: 9000,
 });
 console.log(revision.errores); // [] si está todo bien
 
@@ -114,7 +114,9 @@ const { folio, pdfUrl } = await sii.emitir({ /* la misma boleta */ });
 
 ## Origen
 
-Nació en [Ladys Lavandería](https://ladyslavanderia.cl) (Concón), donde hoy emite las boletas de cada día, y lo mantiene [Top Kreativa](https://topkreativa.com). Lo liberamos porque emitir una boleta no debería costarle una suscripción a ninguna pyme.
+Es la versión abierta del motor de emisión de [Neofolio](https://neofolio.app), la plataforma de documentos tributarios de [Top Kreativa](https://topkreativa.com), donde ya emite boletas reales todos los días. La liberamos porque emitir una boleta no debería costarle una suscripción a ninguna pyme.
+
+¿Necesitas facturas, notas de crédito, guías y un panel listo, sin instalar nada? Eso es [Neofolio](https://neofolio.app).
 
 ## Aviso
 
